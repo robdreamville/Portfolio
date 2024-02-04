@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<link type="text/css" rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js'></script>
+
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/home.css') }}">
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/home.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="wrapper fixed-wrapper">
+        <section id="terminal">
+            <div id="terminal-container">
+                <div class="terminal">
+                    <div class="window-title">
+                        <div class="win-buttons">
+                            <a id="close" class="button" href="#"></a>
+                            <a id="min" class="button" href="#"></a>
+                            <a id="max" class="button" href="#"></a>
+                        </div>
+                        <span class="title">robdreamville</span>
+                    </div>
+                    <div class="message">
+                        <span class='prompt'><span class='user'>{{ common.alias }}</span><span class="at">@</span><span
+                                class="path">/home/{{ common.first_name|lower }}{{ common.last_name|lower }}/</span>><span
+                                class="caret">$</span></span>
+                        <span class="typed"></span>
+                        <form>><span class="caret">$</span>&nbsp;<input type="text" name="response"/></form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="wrapper scroll-wrapper">
+        <div class="top-text">
+            <p class="text-title desktop-view">{{ common.first_name }}</p>
+            <p class="text-title desktop-view">{{ common.last_name }}</p>
+            <p class="text-title mobile-view">{{ common.first_name }} {{ common.last_name }}</p>
+            <div class="social-icons">
+                <a target="_blank" href="https://github.com/robdreamville">
+                    <img class="title-logo" src="static/images/github.svg">
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/roberto-galdamez/">
+                    <img class="title-logo" src="static/images/linkedin-logo.svg">
+                </a>
+                <a target="_blank" href="https://twitter.com/rob_dreamville">
+                    <img class="title-logo" src="static/images/twitter.svg">
+                </a>
+            </div>
+        </div>
+        <div class="middle-text">
+            <p class="text-content">Welcome to my digital abode! 👋 I'm Roberto, a recent Computer Science graduate with an insatiable
+                                    curiosity for technology and a passion for problem-solving. Currently immersed in the exciting realm of
+                                    machine learning, I am on a journey of continuous learning and exploration. As a freshly minted CS grad,
+                                    I bring a solid foundation in programming, algorithms, and software development. My enthusiasm for the
+                                    ever-evolving field of machine learning propels me to embark on various projects that not only sharpen
+                                    my skills but also contribute to the advancement of this fascinating discipline. Feel free to explore my
+                                    portfolio, where you'll find a showcase of my projects, each reflecting my dedication to applying cutting-edge
+                                    technology to real-world challenges. Whether it's coding elegant solutions, experimenting with new algorithms,
+                                    or delving into the intricacies of data science, I am committed to pushing the boundaries of what's possible.
+                                    Join me on this exciting journey as I navigate the intersection of technology and creativity, building a bridge
+                                    between theory and practical application. Let's connect, collaborate, and create the future together!
+            </p>
+
+            <p class="text-content">Let's get in touch!</p>
+
+            <p class="text-content">{{common.first_name}} {{common.last_name}}</p>
+
+            <p class="text-content"><a href="timeline">For more about me, my timeline, read on here.</a></p>
+
+            <br>
+        </div>
+    </div>
+</div>
+{% endblock %}

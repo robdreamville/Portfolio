@@ -1,0 +1,62 @@
+[
+  {
+    "year": "December 2023",
+    "events": [
+      {
+        "icon": "school",
+        "title": "New Jersey City University",
+        "content": "Graduated with Bachelors Degree in Computer Science"
+      }
+    ]
+  },
+  {
+    "year": "August 2022- September 2023",
+    "events": [
+      {
+        "icon": "work",
+        "title": "Infosys",
+        "content": "Develop and maintain custom data-centric web \napplications using ASP.NET, C#.NET and services \nwith Agile/Scrum Methodology. Streamlined reporting \nprocesses by implementing business logic in C# .NET, \nintegrating various data sources into a centralized data \nstore, resulting in a weekly time savings of 10 hours on \nmanual reporting tasks"
+      }
+    ]
+  },
+  {
+    "year": "April 2022 - July 2022",
+    "events": [
+      {
+        "icon": "work",
+        "title": "Apprentice Now - Application Development - .NET Intensive",
+        "content": "I successfully completed a 3-month 'Application Development - .NET Intensive' program, where I specialized in .NET technologies, with a primary focus on SQL Server. Proficient in C#, ASP.NET, and SQL Server, I gained hands-on experience in building robust and scalable applications within the .NET ecosystem. This intensive program has equipped me with the skills needed to excel in .NET application development, particularly with SQL Server as the database solution."
+      }
+    ]
+  },
+  {
+    "year": "2020-2022",
+    "events": [
+      {
+        "icon": "work",
+        "title": "Goldman Sachs (Non tech)",
+        "content": "Site Security Supervisor\nEnsuring the safety and protection of the company's \nemployees, visitors, and associated property. Provide \ncoordination and supervision by monitoring surveillance \nequipment, verifying visitors, and maintaining \nconsistent security protocols"
+      }
+    ]
+  },
+  {
+    "year": "2019-2021",
+    "events": [
+      {
+        "icon": "work",
+        "title": "Brookestone (Non tech)",
+        "content": " Operational Manager\nResponsible for to supervising, hiring, and training\nemployees, Manage quality assurance programs, and \nstrategize process improvements, Oversee financial \nelements in the business like operating budgets, and \nlaunching price promotions that could attract revenue"
+      }
+    ]
+  },
+  {
+    "year": "May 2019",
+    "events": [
+      {
+        "icon": "school",
+        "title": "Hudson County Community College",
+        "content": "Graduated with Associates Degree in Liberal Arts"
+      }
+    ]
+  }
+]

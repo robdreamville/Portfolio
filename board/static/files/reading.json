@@ -1,0 +1,56 @@
+[
+  {
+    "year": "To Read (Ordered)",
+    "books": [
+      {
+        "name": "The Complete Software Developer's Career Guide, John Sonmez"
+      },
+      {
+        "name": "Our Migrant Souls, Hector Tobar"
+      }
+    ]
+  },
+  {
+    "year": "2023",
+    "books": [
+      {
+        "name": "The Prophet, Kahlil Gibran",
+        "review": "This book speaks in tongue and does so effectively conveying truth in its pages"
+      },
+      {
+        "name": "The Red Book, C.G.Jung",
+        "review": "This book was known as a classic and after reading it i understand why."
+      },
+      {
+        "name": "Outwitting the Devil, Napoleon Hill",
+        "review": "This book is actually creepy and relevant in todays world even though it was written in the 40s. Great book"
+      }
+    ]
+  },
+  {
+    "year": "2022",
+    "books": [
+      {
+        "name": "Born for Love, Bruce D. Perry",
+        "review": "This book speaks on childhood development from ages 0-10, it helps you see the impact trauma has on childhood development"
+      },
+      {
+        "name": "Journeys Out of the Body, Robert Monroe",
+        "review": "Great book for anyone interested in Out of Body experiences and astral projection"
+      }
+    ]
+  },
+  {
+    "year": "2021",
+    "books": [
+      {
+        "name": "My Big Toe, Thomas Campbell",
+        "review": "This book has changed my life. It's like taking the red pill in the movie 'The Matrix'. You'll realise how deep the rabbit-hole goes.\n\nThe only downside to the book is the unnecessary verbosity and repetitions, which may put off some people. Hopefully Tom would come up with a concise edition. Still it's no exaggeration to say that this book is worth it's weight in gold."
+      },
+      {
+        "name": "The Power of Now, Eckhart Tolle",
+        "review": "This book was the start of my spiritual journey"
+      }
+    ]
+  }
+]

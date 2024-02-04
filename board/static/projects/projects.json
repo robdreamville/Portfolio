@@ -1,0 +1,18 @@
+{
+  "projects": [
+    {
+      "name": "StreetCode",
+      "link": "Project-1",
+      "date": "01/20/2024",
+      "short": "ASP.NET blog",
+      "status": "complete",
+      "weight": 1,
+      "tags": [
+        "tech"
+      ],
+      "photos": [
+        "/static/projects/project-1/img.jpg"
+      ]
+    }
+  ]
+}
