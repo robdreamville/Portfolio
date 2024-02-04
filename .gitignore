@@ -1,6 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
 
 
 # Virtual environment
 venv/
 
+
+# Environment configuration
+.env
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+logs/
+
+
+# Generated files
+instance/
+*.db
+*.sqlite
+*.pyz
+*.pyw
+*.pyo
+*.pyc
+*.pyo
+__pycache__/
+*.pkl
 
