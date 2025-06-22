@@ -1,12 +1,18 @@
 [
   {
-    "year": "To Read (Ordered)",
+    "year": "2025",
     "books": [
       {
-        "name": "The Complete Software Developer's Career Guide, John Sonmez"
+        "name": "Deep Learning, Ian Goodfellow and Yoshua Bengio and Aaron Courville",
+        "review": "MIT Press book on deep learning fundamentals"
       },
       {
-        "name": "Our Migrant Souls, Hector Tobar"
+        "name": "Green Oranges, Shin Fujiyama",
+        "review": "A story of social entrepreneurship and making a difference"
+      },
+      {
+        "name": "The Lean Startup, Eric Ries",
+        "review": "Essential reading for entrepreneurs and startup methodology"
       }
     ]
   },
@@ -16,6 +22,14 @@
       {
         "name": "Love, Freedom, Aloneness, Osho",
         "review": "My latest read, amazing book"
+      },
+      {
+        "name": "The Complete Software Developer's Career Guide, John Sonmez",
+        "review": "Comprehensive guide for software development careers"
+      },
+      {
+        "name": "Our Migrant Souls, Hector Tobar",
+        "review": "Exploration of Latinx identity and migration"
       }
     ]
   },
