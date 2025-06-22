@@ -6,12 +6,12 @@
         {
           "name": "C#",
           "icon": "csharp",
-          "description": "ASP.NET development, desktop applications"
+          "description": "ASP.NET development, desktop applications, .NET ecosystem"
         },
         {
           "name": "Python",
           "icon": "python",
-          "description": "Web development, data analysis, automation"
+          "description": "Web development, data analysis, automation, AI/ML"
         },
         {
           "name": "JavaScript",
@@ -47,6 +47,16 @@
           "name": "SQL Server",
           "icon": "sqlserver",
           "description": "Database management, stored procedures"
+        },
+        {
+          "name": "RESTful APIs",
+          "icon": "api",
+          "description": "API design, development, and integration"
+        },
+        {
+          "name": "MVC",
+          "icon": "mvc",
+          "description": "Model-View-Controller architecture pattern"
         }
       ]
     },
@@ -59,19 +69,59 @@
           "description": "Version control, collaboration, branching strategies"
         },
         {
-          "name": "Visual Studio",
-          "icon": "visualstudio",
-          "description": "IDE, debugging, .NET development"
+          "name": "GitHub",
+          "icon": "github",
+          "description": "Code hosting, collaboration, project management"
         },
         {
-          "name": "VS Code",
-          "icon": "vscode",
-          "description": "Code editor, extensions, multi-language support"
+          "name": "Docker",
+          "icon": "docker",
+          "description": "Containerization, deployment, environment management"
         },
         {
-          "name": "Azure DevOps",
-          "icon": "azure",
-          "description": "CI/CD, project management, deployment"
+          "name": "Jupyter Notebook",
+          "icon": "jupyter",
+          "description": "Data analysis, interactive development, documentation"
+        },
+        {
+          "name": "Postman",
+          "icon": "postman",
+          "description": "API testing, development, and documentation"
+        }
+      ]
+    },
+    {
+      "category": "AI & Machine Learning",
+      "skills": [
+        {
+          "name": "PyTorch",
+          "icon": "pytorch",
+          "description": "Deep learning framework, neural networks, model development"
+        },
+        {
+          "name": "Hugging Face Transformers",
+          "icon": "huggingface",
+          "description": "NLP models, pre-trained transformers, fine-tuning"
+        },
+        {
+          "name": "NLP",
+          "icon": "nlp",
+          "description": "Natural Language Processing, text analysis, language models"
+        },
+        {
+          "name": "Deep Learning",
+          "icon": "deeplearning",
+          "description": "Neural networks, model architecture, training optimization"
+        },
+        {
+          "name": "Prompt Engineering",
+          "icon": "prompt",
+          "description": "AI model prompting, optimization, effective communication"
+        },
+        {
+          "name": "RAG Pipelines",
+          "icon": "rag",
+          "description": "Retrieval-Augmented Generation, knowledge integration"
         }
       ]
     },

@@ -5,7 +5,7 @@ from typing import Dict, Any, List, Optional
 from config import Config
 
 
-def get_static_json(path: str) -> Dict[str, Any]:
+def get_static_json(path):
     """Load and return JSON data from a static file."""
     file_path = Config.get_static_file_path(path)
     try:
@@ -17,7 +17,7 @@ def get_static_json(path: str) -> Dict[str, Any]:
         return {}
 
 
-def get_static_file_content(path: str) -> str:
+def get_static_file_content(path):
     """Read and return the content of a static file."""
     file_path = Config.get_static_file_path(path)
     try:
@@ -27,7 +27,7 @@ def get_static_file_content(path: str) -> str:
         return ""
 
 
-def order_projects_by_weight(project: Dict[str, Any]) -> int:
+def order_projects_by_weight(project):
     """Sort projects by weight, defaulting to 0 if no weight is specified."""
     try:
         return int(project.get('weight', 0))
@@ -35,7 +35,7 @@ def order_projects_by_weight(project: Dict[str, Any]) -> int:
         return 0
 
 
-def filter_projects_by_tag(projects: List[Dict[str, Any]], tag: Optional[str]) -> List[Dict[str, Any]]:
+def filter_projects_by_tag(projects, tag):
     """Filter projects by tag if specified."""
     if tag is None:
         return projects
@@ -46,6 +46,6 @@ def filter_projects_by_tag(projects: List[Dict[str, Any]], tag: Optional[str]) -
     ]
 
 
-def find_project_by_link(projects: List[Dict[str, Any]], link: str) -> Optional[Dict[str, Any]]:
+def find_project_by_link(projects, link):
     """Find a project by its link."""
     return next((p for p in projects if p.get('link') == link), None) 

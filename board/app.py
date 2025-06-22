@@ -36,7 +36,7 @@ def timeline():
         logger.info("Timeline page accessed")
         return render_template('timeline.html', common=Config.SITE_INFO, timeline=timeline_data)
     except Exception as e:
-        logger.error(f"Error loading timeline: {e}")
+        logger.error("Error loading timeline: {}".format(e))
         abort(500)
 
 
@@ -48,7 +48,7 @@ def reading():
         logger.info("Reading page accessed")
         return render_template('reading.html', common=Config.SITE_INFO, data=data)
     except Exception as e:
-        logger.error(f"Error loading reading data: {e}")
+        logger.error("Error loading reading data: {}".format(e))
         abort(500)
 
 
@@ -62,10 +62,10 @@ def projects():
         tag = request.args.get('tags')
         filtered_projects = filter_projects_by_tag(projects_data, tag)
         
-        logger.info(f"Projects page accessed with tag filter: {tag}")
+        logger.info("Projects page accessed with tag filter: {}".format(tag))
         return render_template('projects.html', common=Config.SITE_INFO, projects=filtered_projects, tag=tag)
     except Exception as e:
-        logger.error(f"Error loading projects: {e}")
+        logger.error("Error loading projects: {}".format(e))
         abort(500)
 
 
@@ -78,12 +78,12 @@ def experiences():
         logger.info("Experiences page accessed")
         return render_template('projects.html', common=Config.SITE_INFO, projects=experiences_data, tag=None)
     except Exception as e:
-        logger.error(f"Error loading experiences: {e}")
+        logger.error("Error loading experiences: {}".format(e))
         abort(500)
 
 
 @app.route('/projects/<title>')
-def project(title: str):
+def project(title):
     """Individual project/experience page route."""
     try:
         projects_data = get_static_json(Config.PROJECTS_FILE).get('projects', [])
@@ -94,7 +94,7 @@ def project(title: str):
         experience_item = find_project_by_link(experiences_data, title)
 
         if project_item is None and experience_item is None:
-            logger.warning(f"Project/experience not found: {title}")
+            logger.warning("Project/experience not found: {}".format(title))
             return render_template('404.html', common=Config.SITE_INFO), 404
 
         # Determine which item to use (prefer experience if both exist)
@@ -103,25 +103,25 @@ def project(title: str):
 
         # Ensure selected is not None (this should be guaranteed by the logic above)
         if selected is None:
-            logger.error(f"Unexpected None value for project: {title}")
+            logger.error("Unexpected None value for project: {}".format(title))
             return render_template('404.html', common=Config.SITE_INFO), 404
 
         # Load HTML description if not present in JSON
         if 'description' not in selected:
             path = "experiences" if is_experience else "projects"
-            html_path = f'static/{path}/{selected["link"]}/{selected["link"]}.html'
+            html_path = 'static/{}/{}/{}.html'.format(path, selected["link"], selected["link"])
             html_content = get_static_file_content(html_path)
             
             # If HTML file doesn't exist, use a default description
             if html_content:
                 selected['description'] = html_content
             else:
-                selected['description'] = f"<p>Description for {selected.get('name', title)} is not available.</p>"
+                selected['description'] = '<p>Description for {} is not available.</p>'.format(selected.get('name', title))
 
-        logger.info(f"Project/experience accessed: {title}")
+        logger.info("Project/experience accessed: {}".format(title))
         return render_template('project.html', common=Config.SITE_INFO, project=selected)
     except Exception as e:
-        logger.error(f"Error loading project {title}: {e}")
+        logger.error("Error loading project {}: {}".format(title, e))
         abort(500)
 
 
@@ -133,7 +133,7 @@ def skills():
         logger.info("Skills page accessed")
         return render_template('skills.html', common=Config.SITE_INFO, skills=skills_data)
     except Exception as e:
-        logger.error(f"Error loading skills data: {e}")
+        logger.error("Error loading skills data: {}".format(e))
         abort(500)
 
 
@@ -154,14 +154,14 @@ def test():
 @app.errorhandler(404)
 def page_not_found(e):
     """404 error handler."""
-    logger.warning(f"404 error: {request.url}")
+    logger.warning("404 error: {}".format(request.url))
     return render_template('404.html', common=Config.SITE_INFO), 404
 
 
 @app.errorhandler(500)
 def internal_server_error(e):
     """500 error handler."""
-    logger.error(f"500 error: {e}")
+    logger.error("500 error: {}".format(e))
     return render_template('500.html', common=Config.SITE_INFO), 500
 
 
