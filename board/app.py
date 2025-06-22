@@ -110,7 +110,13 @@ def project(title: str):
         if 'description' not in selected:
             path = "experiences" if is_experience else "projects"
             html_path = f'static/{path}/{selected["link"]}/{selected["link"]}.html'
-            selected['description'] = get_static_file_content(html_path)
+            html_content = get_static_file_content(html_path)
+            
+            # If HTML file doesn't exist, use a default description
+            if html_content:
+                selected['description'] = html_content
+            else:
+                selected['description'] = f"<p>Description for {selected.get('name', title)} is not available.</p>"
 
         logger.info(f"Project/experience accessed: {title}")
         return render_template('project.html', common=Config.SITE_INFO, project=selected)
