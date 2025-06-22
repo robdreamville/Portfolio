@@ -10,26 +10,61 @@
 
 {% block body %}
 <div class="container">
-    <div class="row">
-        {% for year in timeline %}
-        <div class="col s12 m4 l8">
-            <span class="date">{{ year.year }}</span>
-            <ul class="list">
-                {% for event in year.events %}
-                <li>
-                    <div class="icon-title">
-                        <i class="tiny material-icons">{{ event.icon }}</i>
-                        <a href="/timeline" class="title">{{ event.title }}</a>
-                    </div>
-                    <span class="content">{{ event.content }}</span>
-                </li>
-                {% endfor %}
-            </ul>
+    <!-- Resume Download Section -->
+    <div class="resume-download-section">
+        <div class="resume-header">
+            <h1>{{ common.first_name }} {{ common.last_name }}</h1>
+            <p class="resume-subtitle">Software Developer & AI Enthusiast</p>
+            <p class="resume-location">📍 Jersey City, NJ</p>
         </div>
-        {% endfor %}
+        
+        <div class="resume-actions">
+            <a href="{{ url_for('static', filename='documents/roberto-galdamez-resume.pdf') }}" 
+               class="download-resume-btn" 
+               download="Roberto_Galdamez_Resume.pdf">
+                <i class="material-icons">download</i>
+                Download Resume (PDF)
+            </a>
+            
+            <div class="resume-links">
+                <a href="mailto:robertogaldamez1997@gmail.com" class="resume-link">
+                    <i class="material-icons">email</i>
+                    robertogaldamez1997@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/roberto-galdamez/" target="_blank" class="resume-link">
+                    <i class="material-icons">link</i>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/robdreamville" target="_blank" class="resume-link">
+                    <i class="material-icons">code</i>
+                    GitHub
+                </a>
+            </div>
+        </div>
     </div>
-    <br>
-    <br>
+
+    <!-- Timeline Section -->
+    <div class="timeline-section">
+        <h2>Professional Experience & Education</h2>
+        <div class="row">
+            {% for year in timeline %}
+            <div class="col s12 m4 l8">
+                <span class="date">{{ year.year }}</span>
+                <ul class="list">
+                    {% for event in year.events %}
+                    <li>
+                        <div class="icon-title">
+                            <i class="tiny material-icons">{{ event.icon }}</i>
+                            <a href="/timeline" class="title">{{ event.title }}</a>
+                        </div>
+                        <span class="content">{{ event.content }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
 {% endblock %}
