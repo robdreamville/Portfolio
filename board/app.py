@@ -1,102 +1,163 @@
-import io
-import json
-import os
+import logging
+from flask import Flask, render_template, request, abort
 
-from flask import Flask, render_template, request
+from config import Config
+from utils import (
+    get_static_json, 
+    get_static_file_content, 
+    order_projects_by_weight, 
+    filter_projects_by_tag,
+    find_project_by_link
+)
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
-
-common = {
-    'first_name': 'Roberto',
-    'last_name': 'Galdamez',
-    'alias': 'robdreamville'
-}
+app.config.from_object(Config)
 
 
 @app.route('/')
 def index():
-    return render_template('home.html', common=common)
+    """Home page route."""
+    logger.info("Home page accessed")
+    return render_template('home.html', common=Config.SITE_INFO)
 
 
 @app.route('/timeline')
 def timeline():
-    timeline = get_static_json("static/files/timeline.json")
-    return render_template('timeline.html', common=common, timeline=timeline)
+    """Timeline page route."""
+    try:
+        timeline_data = get_static_json(Config.TIMELINE_FILE)
+        logger.info("Timeline page accessed")
+        return render_template('timeline.html', common=Config.SITE_INFO, timeline=timeline_data)
+    except Exception as e:
+        logger.error(f"Error loading timeline: {e}")
+        abort(500)
 
 
 @app.route('/reading')
 def reading():
-    data = get_static_json("static/files/reading.json")
-    return render_template('reading.html', common=common, data=data)
+    """Reading page route."""
+    try:
+        data = get_static_json(Config.READING_FILE)
+        logger.info("Reading page accessed")
+        return render_template('reading.html', common=Config.SITE_INFO, data=data)
+    except Exception as e:
+        logger.error(f"Error loading reading data: {e}")
+        abort(500)
 
 
 @app.route('/projects')
 def projects():
-    data = get_static_json("static/projects/projects.json")['projects']
-    data.sort(key=order_projects_by_weight, reverse=True)
+    """Projects page route with optional tag filtering."""
+    try:
+        projects_data = get_static_json(Config.PROJECTS_FILE).get('projects', [])
+        projects_data.sort(key=order_projects_by_weight, reverse=True)
 
-    tag = request.args.get('tags')
-    if tag is not None:
-        data = [project for project in data if tag.lower() in [project_tag.lower() for project_tag in project['tags']]]
-
-    return render_template('projects.html', common=common, projects=data, tag=tag)
+        tag = request.args.get('tags')
+        filtered_projects = filter_projects_by_tag(projects_data, tag)
+        
+        logger.info(f"Projects page accessed with tag filter: {tag}")
+        return render_template('projects.html', common=Config.SITE_INFO, projects=filtered_projects, tag=tag)
+    except Exception as e:
+        logger.error(f"Error loading projects: {e}")
+        abort(500)
 
 
 @app.route('/experiences')
 def experiences():
-    experiences = get_static_json("static/experiences/experiences.json")['experiences']
-    experiences.sort(key=order_projects_by_weight, reverse=True)
-    return render_template('projects.html', common=common, projects=experiences, tag=None)
-
-
-def order_projects_by_weight(projects):
+    """Experiences page route."""
     try:
-        return int(projects['weight'])
-    except KeyError:
-        return 0
+        experiences_data = get_static_json(Config.EXPERIENCES_FILE).get('experiences', [])
+        experiences_data.sort(key=order_projects_by_weight, reverse=True)
+        logger.info("Experiences page accessed")
+        return render_template('projects.html', common=Config.SITE_INFO, projects=experiences_data, tag=None)
+    except Exception as e:
+        logger.error(f"Error loading experiences: {e}")
+        abort(500)
 
 
 @app.route('/projects/<title>')
-def project(title):
-    projects = get_static_json("static/projects/projects.json")['projects']
-    experiences = get_static_json("static/experiences/experiences.json")['experiences']
+def project(title: str):
+    """Individual project/experience page route."""
+    try:
+        projects_data = get_static_json(Config.PROJECTS_FILE).get('projects', [])
+        experiences_data = get_static_json(Config.EXPERIENCES_FILE).get('experiences', [])
 
-    in_project = next((p for p in projects if p['link'] == title), None)
-    in_exp = next((p for p in experiences if p['link'] == title), None)
+        # Find the project or experience by link
+        project_item = find_project_by_link(projects_data, title)
+        experience_item = find_project_by_link(experiences_data, title)
 
-    if in_project is None and in_exp is None:
-        return render_template('404.html'), 404
-    # fixme: choose the experience one for now, cuz I've done some shite hardcoding here.
-    elif in_project is not None and in_exp is not None:
-        selected = in_exp
-    elif in_project is not None:
-        selected = in_project
-    else:
-        selected = in_exp
+        if project_item is None and experience_item is None:
+            logger.warning(f"Project/experience not found: {title}")
+            return render_template('404.html', common=Config.SITE_INFO), 404
 
-    # load html if the json file doesn't contain a description
-    if 'description' not in selected:
-        path = "experiences" if in_exp is not None else "projects"
-        selected['description'] = io.open(get_static_file(
-            'static/%s/%s/%s.html' % (path, selected['link'], selected['link'])), "r", encoding="utf-8").read()
-    return render_template('project.html', common=common, project=selected)
+        # Determine which item to use (prefer experience if both exist)
+        selected = experience_item if experience_item is not None else project_item
+        is_experience = experience_item is not None
+
+        # Ensure selected is not None (this should be guaranteed by the logic above)
+        if selected is None:
+            logger.error(f"Unexpected None value for project: {title}")
+            return render_template('404.html', common=Config.SITE_INFO), 404
+
+        # Load HTML description if not present in JSON
+        if 'description' not in selected:
+            path = "experiences" if is_experience else "projects"
+            html_path = f'static/{path}/{selected["link"]}/{selected["link"]}.html'
+            selected['description'] = get_static_file_content(html_path)
+
+        logger.info(f"Project/experience accessed: {title}")
+        return render_template('project.html', common=Config.SITE_INFO, project=selected)
+    except Exception as e:
+        logger.error(f"Error loading project {title}: {e}")
+        abort(500)
+
+
+@app.route('/skills')
+def skills():
+    """Skills page route."""
+    try:
+        skills_data = get_static_json("static/files/skills.json")
+        logger.info("Skills page accessed")
+        return render_template('skills.html', common=Config.SITE_INFO, skills=skills_data)
+    except Exception as e:
+        logger.error(f"Error loading skills data: {e}")
+        abort(500)
+
+
+@app.route('/contact')
+def contact():
+    """Contact page route."""
+    logger.info("Contact page accessed")
+    return render_template('contact.html', common=Config.SITE_INFO)
+
+
+@app.route('/test')
+def test():
+    """Test page route for debugging."""
+    logger.info("Test page accessed")
+    return render_template('test.html', common=Config.SITE_INFO)
 
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html', common=common), 404
+    """404 error handler."""
+    logger.warning(f"404 error: {request.url}")
+    return render_template('404.html', common=Config.SITE_INFO), 404
 
 
-def get_static_file(path):
-    site_root = os.path.realpath(os.path.dirname(__file__))
-    return os.path.join(site_root, path)
+@app.errorhandler(500)
+def internal_server_error(e):
+    """500 error handler."""
+    logger.error(f"500 error: {e}")
+    return render_template('500.html', common=Config.SITE_INFO), 500
 
 
-def get_static_json(path):
-    return json.load(open(get_static_file(path)))
-
-
-if __name__ == "__main__":
-    print("running py app")
-    app.run(host="127.0.0.1", port=5000, debug=True)
-
+if __name__ == '__main__':
+    app.run(debug=Config.DEBUG)

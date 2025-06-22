@@ -5,6 +5,8 @@
     <title>{{ common.first_name }} {{ common.last_name }}</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Roberto Galdamez - Software Developer Portfolio">
+    <meta name="keywords" content="software developer, C#, Python, ASP.NET, portfolio">
 
     <!--fonts-->
     <link rel='stylesheet'
@@ -13,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto:900" rel="stylesheet">
 
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/base.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/animations.css') }}">
 
     {% block head %}
     {% endblock %}
@@ -22,11 +25,20 @@
     <ul id="navbar-list" class="list-inline">
         <li><a class="navbar-ref" href="/">Home</a></li>
         <li><a class="navbar-ref" href="/timeline">Timeline</a></li>
+        <li><a class="navbar-ref" href="/skills">Skills</a></li>
         <li><a class="navbar-ref" href="/projects">Projects</a></li>
         <li><a class="navbar-ref" href="/reading">Reading</a></li>
+        <li><a class="navbar-ref" href="/contact">Contact</a></li>
     </ul>
+    <div class="navbar-controls">
+        <button id="dark-mode-toggle" class="theme-toggle" title="Toggle Dark Mode">
+            🌙
+        </button>
+    </div>
 </div>
 {% block body %}
 {% endblock %}
+
+<script src="{{ url_for('static', filename = 'js/portfolio.js') }}"></script>
 </body>
 </html>

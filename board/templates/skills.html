@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/base.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/animations.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/skills.css') }}">
+    <title>{{ common.first_name }} {{ common.last_name }} - Skills</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="skills-section">
+        <h1 class="section-title">Technical Skills</h1>
+        <p class="section-subtitle">My technical expertise and professional capabilities</p>
+        
+        {% for category in skills.technical_skills %}
+        <div class="skills-category">
+            <h2 class="category-title">{{ category.category }}</h2>
+            <div class="skills-grid">
+                {% for skill in category.skills %}
+                <div class="skill-block animate-in">
+                    <div class="skill-icon">
+                        <span class="icon-text">{{ skill.name[0] }}</span>
+                    </div>
+                    <div class="skill-content">
+                        <h3 class="skill-name">{{ skill.name }}</h3>
+                        <p class="skill-description">{{ skill.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+        
+        <div class="skills-summary">
+            <h2>Professional Strengths</h2>
+            <div class="strengths-grid">
+                <div class="strength-item">
+                    <div class="strength-icon">🔍</div>
+                    <h3>Problem Solving</h3>
+                    <p>Strong analytical skills with experience in debugging and optimizing applications</p>
+                </div>
+                <div class="strength-item">
+                    <div class="strength-icon">🚀</div>
+                    <h3>Adaptability</h3>
+                    <p>Quick learner who can master new technologies and systems efficiently</p>
+                </div>
+                <div class="strength-item">
+                    <div class="strength-icon">💬</div>
+                    <h3>Communication</h3>
+                    <p>Effective communication with clients and cross-functional teams</p>
+                </div>
+                <div class="strength-item">
+                    <div class="strength-icon">🤝</div>
+                    <h3>Collaboration</h3>
+                    <p>Experience working in Agile teams and collaborating with tech departments</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename = 'js/portfolio.js') }}"></script>
+{% endblock %} 

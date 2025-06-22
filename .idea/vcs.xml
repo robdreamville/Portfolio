@@ -3,7 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/board" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/board/aws-elastic-beanstalk-cli-setup" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/venv/Scripts" vcs="Git" />
   </component>
 </project>

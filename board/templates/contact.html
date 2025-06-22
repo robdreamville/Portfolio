@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/base.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/animations.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/contact.css') }}">
+    <title>{{ common.first_name }} {{ common.last_name }} - Contact</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="contact-section">
+        <h1 class="section-title">Get In Touch</h1>
+        <p class="section-subtitle">I'm always open to discussing new opportunities and collaborations</p>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:robertogaldamez1997@gmail.com">robertogaldamez1997@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <div>
+                        <h3>Location</h3>
+                        <p>Jersey City, NJ</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💼</span>
+                    <div>
+                        <h3>LinkedIn</h3>
+                        <p><a href="https://www.linkedin.com/in/roberto-galdamez/" target="_blank">linkedin.com/in/roberto-galdamez</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🐙</span>
+                    <div>
+                        <h3>GitHub</h3>
+                        <p><a href="https://github.com/robdreamville" target="_blank">github.com/robdreamville</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="availability-section">
+            <h2>Availability</h2>
+            <div class="availability-status">
+                <span class="status-indicator available"></span>
+                <p>Currently available for new opportunities</p>
+            </div>
+            <p class="availability-note">
+                I'm actively seeking full-time software development positions, 
+                particularly in .NET development, Python applications, or data analysis roles.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename = 'js/portfolio.js') }}"></script>
+{% endblock %} 

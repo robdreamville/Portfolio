@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Test Page - Navigation</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Navigation Test Page</h1>
+    <p>If you can see this page, navigation is working!</p>
+    
+    <div class="test-links">
+        <h2>Test Navigation Links:</h2>
+        <ul>
+            <li><a href="/" class="navbar-ref">Home</a></li>
+            <li><a href="/timeline" class="navbar-ref">Timeline</a></li>
+            <li><a href="/skills" class="navbar-ref">Skills</a></li>
+            <li><a href="/projects" class="navbar-ref">Projects</a></li>
+            <li><a href="/reading" class="navbar-ref">Reading</a></li>
+            <li><a href="/contact" class="navbar-ref">Contact</a></li>
+        </ul>
+    </div>
+    
+    <div class="debug-info">
+        <h2>Debug Information:</h2>
+        <p>Check the browser console for JavaScript messages.</p>
+        <p>Current URL: <span id="current-url"></span></p>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Test page loaded');
+    document.getElementById('current-url').textContent = window.location.href;
+    
+    // Test navigation links
+    const links = document.querySelectorAll('.navbar-ref');
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            console.log('Link clicked:', this.href);
+        });
+    });
+});
+</script>
+{% endblock %} 

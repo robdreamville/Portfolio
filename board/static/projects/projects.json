@@ -1,6 +1,34 @@
 {
   "projects": [
     {
+      "name": "Link Convert",
+      "link": "Project-3",
+      "date": "03/21/2024",
+      "short": "Discord Bot that converts apple music link to spotify link and vice versa",
+      "status": "complete",
+      "weight": 1,
+      "tags": [
+        "tech"
+      ],
+      "photos": [
+        "/static/projects/project-3/img.jpg"
+      ]
+    },
+    {
+      "name": "JbTunez",
+      "link": "Project-2",
+      "date": "02/13/2024",
+      "short": "Music Recommendation App",
+      "status": "complete",
+      "weight": 1,
+      "tags": [
+        "tech"
+      ],
+      "photos": [
+        "/static/projects/project-2/img.jpg"
+      ]
+    },
+    {
       "name": "StreetCode",
       "link": "Project-1",
       "date": "01/20/2024",

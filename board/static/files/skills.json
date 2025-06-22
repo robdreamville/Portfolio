@@ -1,0 +1,104 @@
+{
+  "technical_skills": [
+    {
+      "category": "Programming Languages",
+      "skills": [
+        {
+          "name": "C#",
+          "icon": "csharp",
+          "description": "ASP.NET development, desktop applications"
+        },
+        {
+          "name": "Python",
+          "icon": "python",
+          "description": "Web development, data analysis, automation"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "javascript",
+          "description": "Frontend development, interactive web applications"
+        },
+        {
+          "name": "SQL",
+          "icon": "sql",
+          "description": "Database design, queries, optimization"
+        }
+      ]
+    },
+    {
+      "category": "Frameworks & Technologies",
+      "skills": [
+        {
+          "name": "ASP.NET",
+          "icon": "dotnet",
+          "description": "Web applications, MVC pattern, API development"
+        },
+        {
+          "name": "Flask",
+          "icon": "flask",
+          "description": "Python web framework, RESTful APIs"
+        },
+        {
+          "name": "React",
+          "icon": "react",
+          "description": "Frontend development, component-based architecture"
+        },
+        {
+          "name": "SQL Server",
+          "icon": "sqlserver",
+          "description": "Database management, stored procedures"
+        }
+      ]
+    },
+    {
+      "category": "Tools & Platforms",
+      "skills": [
+        {
+          "name": "Git",
+          "icon": "git",
+          "description": "Version control, collaboration, branching strategies"
+        },
+        {
+          "name": "Visual Studio",
+          "icon": "visualstudio",
+          "description": "IDE, debugging, .NET development"
+        },
+        {
+          "name": "VS Code",
+          "icon": "vscode",
+          "description": "Code editor, extensions, multi-language support"
+        },
+        {
+          "name": "Azure DevOps",
+          "icon": "azure",
+          "description": "CI/CD, project management, deployment"
+        }
+      ]
+    },
+    {
+      "category": "Soft Skills",
+      "skills": [
+        {
+          "name": "Problem Solving",
+          "icon": "problem-solving",
+          "description": "Analytical thinking, debugging, optimization"
+        },
+        {
+          "name": "Communication",
+          "icon": "communication",
+          "description": "Client interaction, team collaboration, documentation"
+        },
+        {
+          "name": "Team Collaboration",
+          "icon": "collaboration",
+          "description": "Agile methodology, cross-functional teams"
+        },
+        {
+          "name": "Adaptability",
+          "icon": "adaptability",
+          "description": "Quick learning, technology adoption, system mastery"
+        }
+      ]
+    }
+  ]
+} 

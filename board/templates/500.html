@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/base.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="error-page">
+        <h1>500 - Server Error</h1>
+        <p>Something went wrong on our end. Please try again later.</p>
+        <a href="/" class="btn">Return to Home</a>
+    </div>
+</div>
+{% endblock %} 
