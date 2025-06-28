@@ -1,6 +1,20 @@
 {
   "projects": [
     {
+      "name": "StreetCode",
+      "link": "Project-1",
+      "date": "01/20/2024",
+      "short": "Originally built in 2022 and now finally added to my portfolio, StreetCode is a lightweight blogging platform I created to explore full-stack development from the ground up. It uses Entity Framework for data management and SQLite as the backend to keep things simple and reliable.\n\nThe project was an early experiment in building a functional, clean publishing workflow. While the design isn't flashy, it does what it needs to—gives people a place to share ideas without unnecessary complexity.\n\nIf you're curious, feel free to take a look: [Visit StreetCode]",
+      "status": "complete",
+      "weight": 1,
+      "tags": [
+        "tech"
+      ],
+      "photos": [
+        "/static/projects/project-1/chrome_KUNbYjAFyb.png"
+      ]
+    },
+    {
       "name": "Link Convert",
       "link": "Project-3",
       "date": "03/21/2024",
@@ -26,20 +40,6 @@
       ],
       "photos": [
         "/static/projects/project-2/img.jpg"
-      ]
-    },
-    {
-      "name": "StreetCode",
-      "link": "Project-1",
-      "date": "01/20/2024",
-      "short": "Originally built in 2022 and now finally added to my portfolio, StreetCode is a lightweight blogging platform I created to explore full-stack development from the ground up. It uses Entity Framework for data management and SQLite as the backend to keep things simple and reliable.\n\nThe project was an early experiment in building a functional, clean publishing workflow. While the design isn't flashy, it does what it needs to—gives people a place to share ideas without unnecessary complexity.\n\nIf you're curious, feel free to take a look: [Visit StreetCode]",
-      "status": "complete",
-      "weight": 1,
-      "tags": [
-        "tech"
-      ],
-      "photos": [
-        "/static/projects/project-1/img.jpg"
       ]
     }
   ]
