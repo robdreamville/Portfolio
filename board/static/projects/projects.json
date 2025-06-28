@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "StreetCode",
-      "link": "Project-1",
+      "link": "project-1",
       "date": "01/20/2024",
       "short": "A lightweight blogging platform built from scratch to explore full-stack development. Entity Framework for data, SQLite backend. Simple, clean, and functional publishing workflow.",
       "status": "complete",
@@ -16,7 +16,7 @@
     },
     {
       "name": "Link Convert",
-      "link": "Project-3",
+      "link": "project-3",
       "date": "03/21/2024",
       "short": "Discord Bot that converts apple music link to spotify link and vice versa",
       "status": "complete",
@@ -30,7 +30,7 @@
     },
     {
       "name": "JbTunez",
-      "link": "Project-2",
+      "link": "project-2",
       "date": "02/13/2024",
       "short": "Music Recommendation App",
       "status": "complete",
