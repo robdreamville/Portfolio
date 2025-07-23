@@ -41,6 +41,22 @@
       "photos": [
         "/static/projects/project-2/img.jpg"
       ]
+    },
+    {
+      "name": "SportsOracle",
+      "link": "project-4",
+      "date": "07/2025",
+      "short": "Real-time sports trend analyzer that scrapes Reddit & ESPN, clusters discussions, and summarizes topics with transformer models in an interactive dashboard.",
+      "status": "complete",
+      "weight": 1,
+      "tags": [
+        "tech",
+        "NLP",
+        "AI"
+      ],
+      "photos": [
+        "/static/projects/project-4/demo.gif"
+      ]
     }
   ]
 }
