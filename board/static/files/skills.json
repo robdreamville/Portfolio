@@ -39,9 +39,9 @@
           "description": "Python web framework, RESTful APIs"
         },
         {
-          "name": "React",
-          "icon": "react",
-          "description": "Frontend development, component-based architecture"
+          "name": "Streamlit",
+          "icon": "streamlit",
+          "description": "Interactive dashboards for AI insights and chatbot interface (SportsOracle frontend)"
         },
         {
           "name": "SQL Server",
@@ -57,6 +57,11 @@
           "name": "MVC",
           "icon": "mvc",
           "description": "Model-View-Controller architecture pattern"
+        },
+        {
+          "name": "FAISS",
+          "icon": "faiss",
+          "description": "Efficient vector search and semantic clustering for NLP pipelines"
         }
       ]
     },
@@ -87,6 +92,11 @@
           "name": "Postman",
           "icon": "postman",
           "description": "API testing, development, and documentation"
+        },
+        {
+          "name": "Google Colab",
+          "icon": "colab",
+          "description": "Cloud-based development for GPU-accelerated NLP model training and testing"
         }
       ]
     },
@@ -122,6 +132,16 @@
           "name": "RAG Pipelines",
           "icon": "rag",
           "description": "Retrieval-Augmented Generation, knowledge integration"
+        },
+        {
+          "name": "Transformers",
+          "icon": "transformers",
+          "description": "Used Hugging Face library for fine-tuning, embeddings, and inference"
+        },
+        {
+          "name": "Clustering",
+          "icon": "clustering",
+          "description": "Topic modeling and semantic grouping of Reddit/ESPN posts using embeddings"
         }
       ]
     },
@@ -147,6 +167,11 @@
           "name": "Adaptability",
           "icon": "adaptability",
           "description": "Quick learning, technology adoption, system mastery"
+        },
+        {
+          "name": "Self-Driven Learning",
+          "icon": "learning",
+          "description": "Independently designed and executed AI/NLP learning roadmap with project application"
         }
       ]
     }
