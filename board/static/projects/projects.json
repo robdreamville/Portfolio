@@ -1,6 +1,22 @@
 {
   "projects": [
     {
+      "name": "SportsOracle",
+      "link": "project-4",
+      "date": "07/2025",
+      "short": "Real-time sports trend analyzer that scrapes Reddit & ESPN, clusters discussions, and summarizes topics with transformer models in an interactive dashboard.",
+      "status": "complete",
+      "weight": 1,
+      "tags": [
+        "tech",
+        "NLP",
+        "AI"
+      ],
+      "photos": [
+        "/static/projects/project-4/demo.gif"
+      ]
+    },
+    {
       "name": "StreetCode",
       "link": "project-1",
       "date": "01/20/2024",
@@ -12,20 +28,6 @@
       ],
       "photos": [
         "/static/projects/project-1/chrome_KUNbYjAFyb.png"
-      ]
-    },
-    {
-      "name": "Link Convert",
-      "link": "project-3",
-      "date": "03/21/2024",
-      "short": "Discord Bot that converts apple music link to spotify link and vice versa",
-      "status": "complete",
-      "weight": 1,
-      "tags": [
-        "tech"
-      ],
-      "photos": [
-        "/static/projects/project-3/img.jpg"
       ]
     },
     {
@@ -43,19 +45,17 @@
       ]
     },
     {
-      "name": "SportsOracle",
-      "link": "project-4",
-      "date": "07/2025",
-      "short": "Real-time sports trend analyzer that scrapes Reddit & ESPN, clusters discussions, and summarizes topics with transformer models in an interactive dashboard.",
+      "name": "Link Convert",
+      "link": "project-3",
+      "date": "03/21/2024",
+      "short": "Discord Bot that converts apple music link to spotify link and vice versa",
       "status": "complete",
       "weight": 1,
       "tags": [
-        "tech",
-        "NLP",
-        "AI"
+        "tech"
       ],
       "photos": [
-        "/static/projects/project-4/demo.gif"
+        "/static/projects/project-3/img.jpg"
       ]
     }
   ]
