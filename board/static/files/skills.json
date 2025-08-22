@@ -142,6 +142,26 @@
           "name": "Clustering",
           "icon": "clustering",
           "description": "Topic modeling and semantic grouping of Reddit/ESPN posts using embeddings"
+        },
+        {
+          "name": "LangChain",
+          "icon": "langchain",
+          "description": "Built multi-step pipelines and AI agents for retrieval, reasoning, and automation"
+        },
+        {
+          "name": "Smol Agents",
+          "icon": "smolagents",
+          "description": "Experimented with lightweight AI agent frameworks for task automation"
+        },
+        {
+          "name": "LlamaIndex",
+          "icon": "llamaindex",
+          "description": "Implemented retrieval-augmented generation workflows with custom data sources"
+        },
+        {
+          "name": "LangGraph",
+          "icon": "langgraph",
+          "description": "Created stateful, multi-agent systems using graph-based orchestration"
         }
       ]
     },
