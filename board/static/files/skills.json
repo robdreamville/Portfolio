@@ -62,6 +62,11 @@
           "name": "FAISS",
           "icon": "faiss",
           "description": "Efficient vector search and semantic clustering for NLP pipelines"
+        },
+        {
+          "name": "Pydantic",
+          "icon": "pydantic",
+          "description": "Used for data validation, parsing, and type-safe model definitions in Python"
         }
       ]
     },
