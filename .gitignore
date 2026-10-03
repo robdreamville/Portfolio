@@ -1,37 +1,86 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
-
-
-# Virtual environment
-venv/
-
-
-# Environment configuration
-.env
-
-# Compiled Python files
+*.py[cod]
+*$py.class
 *.pyc
 *.pyo
 *.pyd
 
-# Logs
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Logs and databases
 *.log
 logs/
-
-
-# Generated files
-instance/
 *.db
 *.sqlite
-*.pyz
-*.pyw
-*.pyo
-*.pyc
-*.pyo
-__pycache__/
-*.pkl
+*.sqlite3
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Environments
+.env
 .env.*
+.venv
 .venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Credentials and secrets
 credentials.json
 credentials.yml
 credentials.yaml
@@ -39,3 +88,7 @@ credentials.yaml
 *.pem
 *.key
 
+# Generated files
+*.pyz
+*.pyw
+*.pkl

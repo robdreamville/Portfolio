@@ -146,5 +146,5 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - **Name**: Roberto Galdamez
 - **Alias**: robdreamville
-- **GitHub**: [Your GitHub Profile]
-- **LinkedIn**: [Your LinkedIn Profile] 
+- **GitHub**: https://github.com/robdreamville
+- **LinkedIn**: https://www.linkedin.com/in/roberto-galdamez/
