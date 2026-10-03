@@ -2,12 +2,12 @@ $(function() {
   /* NOTE: hard-refresh the browser once you've updated this */
   $(".typed").typed({
     strings: [
-    "stat Roberto Galdamez<br/>" +
-    "><span class='caret'>$</span> status: Job seeker<br/> ^100" +
-    "><span class='caret'>$</span> skills: coding ninja, problem solver<br/> ^100" +
-    "><span class='caret'>$</span> hobbies: tech enthusiast, bookworm, coffee connoisseur, soccer<br/> ^300" +
-    "><span class='caret'>$</span> alias: robdreamville<br/> ^300" +
-    "><span class='caret'>$</span> universe: exploring the digital realms<br/> ^300"
+    "whoami<br/>" +
+    "><span class='caret'>$</span> roberto galdamez — ai systems builder<br/> ^100" +
+    "><span class='caret'>$</span> focus: agents, evals, pipelines that ship<br/> ^100" +
+    "><span class='caret'>$</span> stack: python, langgraph, gemini, fastapi<br/> ^100" +
+    "><span class='caret'>$</span> now: building neurastream<br/> ^300" +
+    "><span class='caret'>$</span> open to: ai ops, implementation, support roles<br/> ^300"
 ],
     showCursor: true,
     cursorChar: '_',

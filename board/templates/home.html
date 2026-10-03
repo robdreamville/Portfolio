@@ -2,72 +2,69 @@
 
 {% block head %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-<link type="text/css" rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <script src='https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js'></script>
-
 <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/home.css') }}">
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/home.js') }}"></script>
 {% endblock %}
 
 {% block body %}
-<div class="container">
-    <div class="wrapper fixed-wrapper">
-        <section id="terminal">
-            <div id="terminal-container">
-                <div class="terminal">
-                    <div class="window-title">
-                        <div class="win-buttons">
-                            <a id="close" class="button" href="#"></a>
-                            <a id="min" class="button" href="#"></a>
-                            <a id="max" class="button" href="#"></a>
-                        </div>
-                        <span class="title">robdreamville</span>
+<main class="hero">
+    <p class="eyebrow">AI Systems Builder &mdash; Jersey City, NJ</p>
+    <h1 class="hero-name">{{ common.first_name }}<br>{{ common.last_name }}</h1>
+    <p class="lede">I'm Roberto Galdamez, a computer science graduate from Jersey City. I build AI systems that do real work: multi agent platforms, NLP pipelines, and the evaluation loops that keep them honest.</p>
+    <p class="lede">I am looking for a role in AI operations, implementation, or technical support. The kind of work where knowing how AI systems are built makes you better at running them, fixing them, and making them useful.</p>
+    <div class="cta-row">
+        <a href="/projects" class="btn-primary">View my work</a>
+        <a href="/contact" class="btn-ghost">Get in touch</a>
+    </div>
+    <div class="social-row">
+        <a target="_blank" href="https://github.com/robdreamville" aria-label="GitHub">
+            <img class="title-logo" src="{{ url_for('static', filename='images/github.svg') }}" alt="GitHub">
+        </a>
+        <a target="_blank" href="https://www.linkedin.com/in/roberto-galdamez/" aria-label="LinkedIn">
+            <img class="title-logo" src="{{ url_for('static', filename='images/linkedin-logo.svg') }}" alt="LinkedIn">
+        </a>
+        <a target="_blank" href="https://twitter.com/rob_dreamville" aria-label="Twitter">
+            <img class="title-logo" src="{{ url_for('static', filename='images/twitter.svg') }}" alt="Twitter">
+        </a>
+    </div>
+</main>
+
+<section class="terminal-showcase">
+    <div id="terminal">
+        <div id="terminal-container">
+            <div class="terminal">
+                <div class="window-title">
+                    <div class="win-buttons">
+                        <a id="close" class="button" href="#"></a>
+                        <a id="min" class="button" href="#"></a>
+                        <a id="max" class="button" href="#"></a>
                     </div>
-                    <div class="message">
-                        <span class='prompt'><span class='user'>{{ common.alias }}</span><span class="at">@</span><span
-                                class="path">/home/{{ common.first_name|lower }}{{ common.last_name|lower }}/</span>><span
-                                class="caret">$</span></span>
-                        <span class="typed"></span>
-                        <form>><span class="caret">$</span>&nbsp;<input type="text" name="response"/></form>
-                    </div>
+                    <span class="title">robdreamville</span>
+                </div>
+                <div class="message">
+                    <span class='prompt'><span class='user'>{{ common.alias }}</span><span class="at">@</span><span
+                            class="path">/home/{{ common.first_name|lower }}{{ common.last_name|lower }}/</span>><span
+                            class="caret">$</span></span>
+                    <span class="typed"></span>
+                    <form>><span class="caret">$</span>&nbsp;<input type="text" name="response"/></form>
                 </div>
             </div>
-        </section>
-    </div>
-    <div class="wrapper scroll-wrapper">
-        <div class="top-text">
-            <p class="text-title desktop-view">{{ common.first_name }}</p>
-            <p class="text-title desktop-view">{{ common.last_name }}</p>
-            <p class="text-title mobile-view">{{ common.first_name }} {{ common.last_name }}</p>
-            <div class="social-icons">
-                <a target="_blank" href="https://github.com/robdreamville">
-                    <img class="title-logo" src="static/images/github.svg">
-                </a>
-                <a target="_blank" href="https://www.linkedin.com/in/roberto-galdamez/">
-                    <img class="title-logo" src="static/images/linkedin-logo.svg">
-                </a>
-                <a target="_blank" href="https://twitter.com/rob_dreamville">
-                    <img class="title-logo" src="static/images/twitter.svg">
-                </a>
-            </div>
-        </div>
-        <div class="middle-text">
-            <p class="text-content">I'm Roberto Galdamez, a computer science graduate from Jersey City. I build AI systems that do real work: multi agent platforms, NLP pipelines, and the evaluation loops that keep them honest.</p>
-
-            <p class="text-content">I am looking for a role in AI operations, implementation, or technical support. The kind of work where knowing how AI systems are built makes you better at running them, fixing them, and making them useful.</p>
-
-            <p class="text-content">Let's get in touch!</p>
-
-            <p class="text-content">{{common.first_name}} {{common.last_name}}</p>
-
-            <p class="text-content"><a href="timeline">For more about me, my timeline, read on here.</a></p>
-
-            <br>
         </div>
     </div>
-</div>
+</section>
+
+<section class="featured-strip">
+    <p class="strip-label">Featured project</p>
+    <a href="/projects/neurastream" class="featured-card">
+        <div class="featured-text">
+            <h2>NeuraStream</h2>
+            <p>Multi-agent AI content engine. Research agents gather from Reddit and Google, a drafting agent writes platform native content, and an honest critic scores quality before anything ships.</p>
+            <span class="featured-link">Read more &rarr;</span>
+        </div>
+        <div class="featured-tags">
+            <span>AI</span><span>Agents</span><span>NLP</span>
+        </div>
+    </a>
+</section>
 {% endblock %}
