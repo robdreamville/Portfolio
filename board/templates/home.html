@@ -5,10 +5,13 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js'></script>
 <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/home.css') }}">
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/home.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/network.js') }}"></script>
 {% endblock %}
 
 {% block body %}
 <main class="hero">
+    <canvas id="net" aria-hidden="true"></canvas>
+    <div class="hero-inner">
     <p class="eyebrow">AI Systems Builder &mdash; Jersey City, NJ</p>
     <h1 class="hero-name">{{ common.first_name }}<br>{{ common.last_name }}</h1>
     <p class="lede">I'm Roberto Galdamez, a computer science graduate from Jersey City. I build AI systems that do real work: multi agent platforms, NLP pipelines, and the evaluation loops that keep them honest.</p>
@@ -28,31 +31,8 @@
             <img class="title-logo" src="{{ url_for('static', filename='images/twitter.svg') }}" alt="Twitter">
         </a>
     </div>
-</main>
-
-<section class="terminal-showcase">
-    <div id="terminal">
-        <div id="terminal-container">
-            <div class="terminal">
-                <div class="window-title">
-                    <div class="win-buttons">
-                        <a id="close" class="button" href="#"></a>
-                        <a id="min" class="button" href="#"></a>
-                        <a id="max" class="button" href="#"></a>
-                    </div>
-                    <span class="title">robdreamville</span>
-                </div>
-                <div class="message">
-                    <span class='prompt'><span class='user'>{{ common.alias }}</span><span class="at">@</span><span
-                            class="path">/home/{{ common.first_name|lower }}{{ common.last_name|lower }}/</span>><span
-                            class="caret">$</span></span>
-                    <span class="typed"></span>
-                    <form>><span class="caret">$</span>&nbsp;<input type="text" name="response"/></form>
-                </div>
-            </div>
-        </div>
     </div>
-</section>
+</main>
 
 <section class="featured-strip">
     <p class="strip-label">Featured project</p>

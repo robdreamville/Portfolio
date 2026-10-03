@@ -1,4 +1,6 @@
 $(function() {
+  /* Terminal removed Oct 2026 — skip typed init when the element is gone */
+  if (!$(".typed").length) return;
   /* NOTE: hard-refresh the browser once you've updated this */
   $(".typed").typed({
     strings: [
