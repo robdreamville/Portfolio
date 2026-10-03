@@ -8,6 +8,16 @@
     <meta name="description" content="Roberto Galdamez - AI systems builder. NeuraStream multi-agent platform, SportsOracle NLP analytics. AI operations, implementation, and technical support.">
     <meta name="keywords" content="AI operations, AI agents, LangGraph, NLP, Python, portfolio, Roberto Galdamez">
 
+    <!-- social preview card -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Roberto Galdamez — AI Systems Builder">
+    <meta property="og:description" content="I build AI systems that do real work: multi-agent platforms, NLP pipelines, and the evaluation loops that keep them honest.">
+    <meta property="og:image" content="{{ url_for('static', filename='images/og-card.png', _external=True) }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Roberto Galdamez — AI Systems Builder">
+    <meta name="twitter:description" content="I build AI systems that do real work: multi-agent platforms, NLP pipelines, and the evaluation loops that keep them honest.">
+    <meta name="twitter:image" content="{{ url_for('static', filename='images/og-card.png', _external=True) }}">
+
     <!--fonts-->
     <link rel='stylesheet'
           href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Source+Code+Pro:400,500,600,700'
@@ -29,6 +39,9 @@
   } catch (e) { document.body.classList.add('dark-mode'); }
 </script>
 <div class="navbar-ul">
+    <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
     <ul id="navbar-list" class="list-inline">
         <li><a class="navbar-ref" href="/">Home</a></li>
         <li><a class="navbar-ref" href="/timeline">Timeline</a></li>

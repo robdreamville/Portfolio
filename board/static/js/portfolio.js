@@ -70,6 +70,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Mobile nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navbarUl = document.querySelector('.navbar-ul');
+    if (navToggle && navbarUl) {
+        navToggle.addEventListener('click', function() {
+            const open = navbarUl.classList.toggle('nav-open');
+            navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        });
+        // close the menu when a link is tapped
+        navbarUl.querySelectorAll('.navbar-ref').forEach(function(link) {
+            link.addEventListener('click', function() {
+                navbarUl.classList.remove('nav-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
     // Dark mode toggle
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     if (darkModeToggle) {
