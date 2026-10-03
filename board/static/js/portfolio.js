@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe all project cards and timeline items
-    document.querySelectorAll('.project-card, .timeline-item').forEach(el => {
+    document.querySelectorAll('.project-card, .timeline-item, .cards-container .card').forEach(el => {
         observer.observe(el);
     });
 

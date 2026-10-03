@@ -102,6 +102,16 @@
           "name": "Google Colab",
           "icon": "colab",
           "description": "Cloud-based development for GPU-accelerated NLP model training and testing"
+        },
+        {
+          "name": "Linux Command Line",
+          "icon": "linux",
+          "description": "Daily driver for development, debugging, and deployment tasks"
+        },
+        {
+          "name": "MCP Integrations",
+          "icon": "mcp",
+          "description": "Model Context Protocol integrations connecting AI assistants to real tools and data"
         }
       ]
     },

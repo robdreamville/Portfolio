@@ -1,0 +1,222 @@
+/* Modern polish layer — loaded last, overrides base styles.
+   Accent ties to the terminal green. Safe to remove to revert. */
+
+:root {
+  --accent: #2ea86a;
+  --accent-soft: rgba(46, 168, 106, 0.12);
+  --ink: #1c1e21;
+  --ink-soft: #5b6068;
+  --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 14px 34px rgba(0, 0, 0, 0.14);
+}
+
+/* ---- Nav: sticky with blur ---- */
+.navbar-ul {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 6px 24px;
+}
+
+.navbar-ref {
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.navbar-ref:hover {
+  color: var(--ink);
+  background-color: var(--accent-soft);
+}
+
+/* ---- Selection ---- */
+::selection {
+  background: var(--accent-soft);
+}
+a::selection,
+span::selection,
+a::-moz-selection,
+span::-moz-selection {
+  background: var(--accent-soft);
+}
+
+/* ---- Home: readable bio, refined hero ---- */
+.middle-text {
+  max-width: 640px;
+}
+
+.text-content {
+  line-height: 1.75;
+  color: #2b2e33;
+  font-size: 17px;
+}
+
+.text-title {
+  letter-spacing: -0.02em;
+  font-weight: 900;
+}
+
+.top-text .social-icons {
+  margin-top: 18px;
+}
+
+.title-logo {
+  opacity: 0.55;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.title-logo:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* ---- Terminal: deeper, crisper ---- */
+#terminal .terminal {
+  background: rgba(24, 26, 30, 0.96);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  height: 280px;
+}
+
+#terminal .terminal .window-title {
+  background: linear-gradient(to bottom, #3a3d42, #2c2f34);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+#terminal .terminal .title {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ---- Project cards: modern lift ---- */
+.card {
+  border-radius: 14px !important;
+  overflow: hidden;
+  box-shadow: var(--card-shadow) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover) !important;
+}
+
+.card .card-image img.card-image {
+  object-fit: cover;
+  width: 100%;
+}
+
+.card #title {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.card .card-content .md-chip {
+  border-radius: 999px;
+}
+
+.md-chip-link {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---- Scroll reveal hooks into the existing .animate-in (progressive enhancement:
+   no JS still shows everything) ---- */
+.cards-container .card.animate-in {
+  animation: cardIn 0.6s ease-out forwards;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Buttons and links ---- */
+a {
+  transition: color 0.2s ease;
+}
+
+/* ---- Dark mode: full coverage ---- */
+body.dark-mode {
+  background-color: #141619;
+  color: #e8eaed;
+}
+
+.dark-mode .navbar-ul {
+  background-color: rgba(24, 26, 30, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .navbar-ref {
+  color: #b0b6bd;
+}
+
+.dark-mode .navbar-ref:hover {
+  color: #fff;
+  background-color: rgba(46, 168, 106, 0.18);
+}
+
+.dark-mode .text-content {
+  color: #c9ced4;
+}
+
+.dark-mode .text-title {
+  color: #f2f4f6;
+}
+
+.dark-mode .card {
+  background-color: #1e2126 !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark-mode .card:hover {
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark-mode .card .card-title,
+.dark-mode .card .card-content {
+  color: #e8eaed !important;
+}
+
+.dark-mode .card-reveal {
+  background-color: #1e2126 !important;
+  color: #c9ced4 !important;
+}
+
+.dark-mode .card-reveal .card-title {
+  color: #f2f4f6 !important;
+}
+
+.dark-mode .theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ---- Focus visibility ---- */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---- Responsive refinements ---- */
+@media only screen and (max-width: 1094px) {
+  .text-content {
+    font-size: 16px;
+    padding: 0 8px;
+  }
+  .middle-text {
+    max-width: 100%;
+  }
+}

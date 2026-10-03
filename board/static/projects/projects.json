@@ -1,6 +1,24 @@
 {
   "projects": [
     {
+      "name": "NeuraStream",
+      "link": "neurastream",
+      "date": "2025",
+      "short": "Multi-agent AI content engine. Research agents gather from Reddit and Google, a drafting agent writes platform native content, and an honest critic LLM scores quality before anything ships. FastAPI dashboard with run history and analytics.",
+      "status": "complete",
+      "weight": 10,
+      "tags": [
+        "AI",
+        "Agents",
+        "NLP",
+        "tech"
+      ],
+      "github": "https://github.com/robdreamville/NeuraStream",
+      "photos": [
+        "/static/projects/neurastream/demo.gif"
+      ]
+    },
+    {
       "name": "SportsOracle",
       "link": "project-4",
       "date": "07/2025",

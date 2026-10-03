@@ -69,47 +69,24 @@ def projects():
         abort(500)
 
 
-@app.route('/experiences')
-def experiences():
-    """Experiences page route."""
-    try:
-        experiences_data = get_static_json(Config.EXPERIENCES_FILE).get('experiences', [])
-        experiences_data.sort(key=order_projects_by_weight, reverse=True)
-        logger.info("Experiences page accessed")
-        return render_template('projects.html', common=Config.SITE_INFO, projects=experiences_data, tag=None)
-    except Exception as e:
-        logger.error("Error loading experiences: {}".format(e))
-        abort(500)
-
-
 @app.route('/projects/<title>')
 def project(title):
     """Individual project/experience page route."""
     try:
         projects_data = get_static_json(Config.PROJECTS_FILE).get('projects', [])
-        experiences_data = get_static_json(Config.EXPERIENCES_FILE).get('experiences', [])
 
-        # Find the project or experience by link
+        # Find the project by link
         project_item = find_project_by_link(projects_data, title)
-        experience_item = find_project_by_link(experiences_data, title)
 
-        if project_item is None and experience_item is None:
-            logger.warning("Project/experience not found: {}".format(title))
+        if project_item is None:
+            logger.warning("Project not found: {}".format(title))
             return render_template('404.html', common=Config.SITE_INFO), 404
 
-        # Determine which item to use (prefer experience if both exist)
-        selected = experience_item if experience_item is not None else project_item
-        is_experience = experience_item is not None
-
-        # Ensure selected is not None (this should be guaranteed by the logic above)
-        if selected is None:
-            logger.error("Unexpected None value for project: {}".format(title))
-            return render_template('404.html', common=Config.SITE_INFO), 404
+        selected = project_item
 
         # Load HTML description if not present in JSON
         if 'description' not in selected:
-            path = "experiences" if is_experience else "projects"
-            html_path = 'static/{}/{}/{}.html'.format(path, selected["link"], selected["link"])
+            html_path = 'static/projects/{}/{}.html'.format(selected["link"], selected["link"])
             html_content = get_static_file_content(html_path)
             
             # If HTML file doesn't exist, use a default description
@@ -118,7 +95,7 @@ def project(title):
             else:
                 selected['description'] = '<p>Description for {} is not available.</p>'.format(selected.get('name', title))
 
-        logger.info("Project/experience accessed: {}".format(title))
+        logger.info("Project accessed: {}".format(title))
         return render_template('project.html', common=Config.SITE_INFO, project=selected)
     except Exception as e:
         logger.error("Error loading project {}: {}".format(title, e))
@@ -142,13 +119,6 @@ def contact():
     """Contact page route."""
     logger.info("Contact page accessed")
     return render_template('contact.html', common=Config.SITE_INFO)
-
-
-@app.route('/test')
-def test():
-    """Test page route for debugging."""
-    logger.info("Test page accessed")
-    return render_template('test.html', common=Config.SITE_INFO)
 
 
 @app.errorhandler(404)

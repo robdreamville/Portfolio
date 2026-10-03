@@ -1,5 +1,25 @@
 [
   {
+    "year": "September 2025 - Present",
+    "events": [
+      {
+        "icon": "work",
+        "title": "FedEx Office - Consultant, Customer Service",
+        "content": "Customer facing operations in a high volume retail production environment. Run the full order lifecycle from intake to delivery, troubleshoot production issues on the spot, and keep the queue moving when the pressure is on."
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "events": [
+      {
+        "icon": "work",
+        "title": "NeuraStream - Multi-Agent AI Platform",
+        "content": "Designed and built a multi-agent content engine with LangGraph and Google Gemini. Research agents, a drafting agent, and an honest critic model that scores quality before anything ships, all managed through a FastAPI dashboard with run history and analytics."
+      }
+    ]
+  },
+  {
     "year": "May 2024 - November 2024",
     "events": [
       {
