@@ -67,7 +67,7 @@
           "name": "Pydantic",
           "icon": "pydantic",
           "description": "Used for data validation, parsing, and type-safe model definitions in Python"
-        }
+        } 
       ]
     },
     {

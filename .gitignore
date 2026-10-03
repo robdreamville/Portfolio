@@ -30,4 +30,12 @@ instance/
 *.pyo
 __pycache__/
 *.pkl
+.env.*
+.venv/
+credentials.json
+credentials.yml
+credentials.yaml
+*credentials*
+*.pem
+*.key
 

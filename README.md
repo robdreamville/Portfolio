@@ -2,6 +2,10 @@
 
 A clean, modern portfolio website built with Flask showcasing projects, experiences, and personal information.
 
+## Live Site
+
+You can view the live site here: [https://rgportfolio.pythonanywhere.com/](https://rgportfolio.pythonanywhere.com/)
+
 ## Features
 
 - **Home Page**: Personal introduction and overview
