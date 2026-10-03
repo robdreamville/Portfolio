@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
         });
 
-        // Check for saved dark mode preference
-        if (localStorage.getItem('darkMode') === 'true') {
+        // Dark mode starts ON by default; only stay light if the user explicitly chose it
+        if (localStorage.getItem('darkMode') !== 'false') {
             document.body.classList.add('dark-mode');
         }
     }

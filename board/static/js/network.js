@@ -1,5 +1,6 @@
 /* Agent-network hero canvas: drifting nodes, linking lines, subtle cursor response.
    Represents multi-agent systems without saying a word. */
+document.addEventListener('DOMContentLoaded', function () {
 (function () {
   var canvas = document.getElementById('net');
   if (!canvas) return;
@@ -10,7 +11,7 @@
   var DPR = Math.min(window.devicePixelRatio || 1, 2);
 
   function dark() {
-    return document.documentElement.getAttribute('data-theme') === 'dark';
+    return document.body.classList.contains('dark-mode');
   }
 
   function resize() {
@@ -110,8 +111,9 @@
 
   // re-tint when theme toggles
   new MutationObserver(function () { if (reduced) step(); })
-    .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    .observe(document.body, { attributes: true, attributeFilter: ['class'] });
 
   resize(); seed(); step();
   window.addEventListener('resize', function () { resize(); seed(); if (reduced) step(); });
 })();
+});
