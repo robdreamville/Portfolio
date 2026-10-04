@@ -1,52 +1,52 @@
 {
- "projects": [
-  {
-   "name": "NeuraStream",
-   "link": "neurastream",
-   "date": "2025",
-   "short": "Multi-agent AI content engine. Research agents gather from Reddit and Google, a drafting agent writes platform native content, and an honest critic LLM scores quality before anything ships. FastAPI dashboard with run history and analytics.",
-   "status": "complete",
-   "weight": 10,
-   "tags": [
-    "AI",
-    "Agents",
-    "NLP",
-    "tech"
-   ],
-   "github": "https://github.com/robdreamville/NeuraStream",
-   "photos": [
-    "/static/projects/neurastream/demo.gif"
-   ]
-  },
-  {
-   "name": "SportsOracle",
-   "link": "project-4",
-   "date": "07/2025",
-   "short": "Real-time sports trend analyzer that scrapes Reddit & ESPN, clusters discussions, and summarizes topics with transformer models in an interactive dashboard.",
-   "status": "complete",
-   "weight": 1,
-   "tags": [
-    "tech",
-    "NLP",
-    "AI"
-   ],
-   "photos": [
-    "/static/projects/project-4/demo.gif"
-   ]
-  },
-  {
-   "name": "StreetCode",
-   "link": "project-1",
-   "date": "01/20/2024",
-   "short": "A lightweight blogging platform built from scratch to explore full-stack development. Entity Framework for data, SQLite backend. Simple, clean, and functional publishing workflow.",
-   "status": "complete",
-   "weight": 1,
-   "tags": [
-    "tech"
-   ],
-   "photos": [
-    "/static/projects/project-1/chrome_KUNbYjAFyb.png"
-   ]
-  }
- ]
+  "projects": [
+    {
+      "name": "NeuraStream",
+      "link": "neurastream",
+      "date": "2025",
+      "short": "Multi-agent AI content engine. Research agents gather from Reddit and Google, a drafting agent writes platform native content, and an honest critic LLM scores quality before anything ships. FastAPI dashboard with run history and analytics.",
+      "status": "complete",
+      "weight": 10,
+      "tags": [
+        "AI",
+        "Agents",
+        "NLP",
+        "tech"
+      ],
+      "github": "https://github.com/robdreamville/NeuraStream",
+      "photos": [
+        "/static/projects/neurastream/demo.gif"
+      ]
+    },
+    {
+      "name": "SportsOracle",
+      "link": "project-4",
+      "date": "07/2025",
+      "short": "Real-time sports trend analyzer that scrapes Reddit & ESPN, clusters discussions, and summarizes topics with transformer models in an interactive dashboard.",
+      "status": "complete",
+      "weight": 1,
+      "tags": [
+        "tech",
+        "NLP",
+        "AI"
+      ],
+      "photos": [
+        "/static/projects/project-4/demo.gif"
+      ]
+    },
+    {
+      "name": "StreetCode",
+      "link": "project-1",
+      "date": "01/20/2024",
+      "short": "A lightweight blogging platform built from scratch to explore full-stack development. Entity Framework for data, SQLite backend. Simple, clean, and functional publishing workflow.",
+      "status": "complete",
+      "weight": 1,
+      "tags": [
+        "tech"
+      ],
+      "photos": [
+        "/static/projects/project-1/streetcode-v2.png"
+      ]
+    }
+  ]
 }
