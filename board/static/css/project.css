@@ -38,6 +38,10 @@
     max-width: 1100px;
 }
 
+.fixed-wrapper > div {
+    width: 100%;
+}
+
 .carousel-inner .item {
     max-height: 80vh; /* was 500px */
     max-width: 100%;
